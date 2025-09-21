@@ -92,6 +92,13 @@
                 );
                 z-index: 0;
             }
+
+            /* Hide GitHub contributions iframe on old iOS Safari */
+            @supports not (backdrop-filter: blur(1px)) {
+                .github-contributions-iframe {
+                    display: none;
+                }
+            }
         </style>
     </head>
     <body>
