@@ -49,6 +49,49 @@
                 margin-right: 0.5rem;
                 font-size: 1.2rem;
             }
+            
+            .github-card {
+                position: relative;
+                overflow: hidden;
+            }
+
+            .github-card .card-body {
+                position: relative;
+                z-index: 1;
+            }
+
+            .github-contributions-iframe {
+                position: absolute;
+                top: -5px;
+                right: -38px;
+                pointer-events: none;
+                border: none;
+                width: 800px;
+                height: 150px;
+                transform: scale(0.6);
+                transform-origin: top right;
+                overflow: hidden;
+                clip-path: inset(0 0 40px 0);
+
+                filter: invert(1) hue-rotate(180deg);
+            }
+
+            .github-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                pointer-events: none;
+                background: linear-gradient(to right, 
+                    #ffffff 0%, 
+                    #ffffff 120px, 
+                    rgba(255, 255, 255, 0.8) 140px,
+                    rgba(255, 255, 255, 0.4) 160px,
+                    transparent 200px
+                );
+                z-index: 0;
+            }
         </style>
     </head>
     <body>
@@ -103,7 +146,7 @@
                     <a
                         href="https://github.com/Ligul"
                         target="_blank"
-                        class="card link-card text-decoration-none"
+                        class="card link-card text-decoration-none github-card"
                     >
                         <div class="card-body d-flex align-items-center">
                             <i
@@ -111,6 +154,13 @@
                             ></i>
                             <span class="text-dark">GitHub</span>
                         </div>
+                        <iframe 
+                            src="https://pages.codeadam.ca/github-contributions/Ligul" 
+                            class="github-contributions-iframe"
+                            frameborder="0" 
+                            scrolling="no">
+                        </iframe>
+                        <div class="github-overlay"></div>
                     </a>
                     <a
                         href="https://sketchfab.com/Ligul"
